@@ -504,23 +504,17 @@
       Contact Me
     </h2>
 
-    <!-- SUCCESS MESSAGE -->
-    <div id="successMessage"
-      class="hidden mb-6 bg-green-500/20 border border-green-400 text-green-300 px-6 py-4 rounded-2xl text-center animate__animated animate__fadeIn">
-      ✅ Message sent successfully!
-    </div>
-
-    <!-- FORM -->
+    <!-- CONTACT FORM -->
     <form
       id="contactForm"
       action="https://formsubmit.co/ajax/gtvenkatesh205@gmail.com"
       method="POST"
       class="bg-slate-900 p-10 rounded-3xl border border-white/10">
 
-      <!-- FORM SETTINGS -->
+      <!-- SETTINGS -->
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+      <input type="hidden" name="_subject" value="New Portfolio Contact">
 
       <div class="grid md:grid-cols-2 gap-6 mb-6">
 
@@ -560,6 +554,31 @@
 
     </form>
 
+    <!-- THANK YOU BOX -->
+    <div
+      id="thankYouBox"
+      class="hidden mt-10 bg-slate-900 border border-white/10 rounded-3xl p-12 text-center max-w-2xl mx-auto shadow-2xl animate__animated animate__zoomIn">
+
+      <div class="text-7xl mb-6 animate-bounce">
+        🚀
+      </div>
+
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6 gradient-text">
+        Message Sent!
+      </h1>
+
+      <p class="text-slate-400 text-lg leading-8 mb-10">
+        Thank you for contacting me.
+        I’ll get back to you as soon as possible.
+      </p>
+
+      <a href="#home"
+        class="inline-block px-8 py-4 bg-cyan-500 hover:bg-cyan-600 rounded-xl font-bold transition duration-300 shadow-lg shadow-cyan-500/30">
+        Back To Home
+      </a>
+
+    </div>
+
   </div>
 
 </section>
@@ -568,7 +587,7 @@
 <script>
 
   const form = document.getElementById("contactForm");
-  const successMessage = document.getElementById("successMessage");
+  const thankYouBox = document.getElementById("thankYouBox");
   const submitBtn = document.getElementById("submitBtn");
 
   form.addEventListener("submit", async function (e) {
@@ -586,24 +605,20 @@
         method: "POST",
         body: formData,
         headers: {
-          'Accept': 'application/json'
+          Accept: "application/json"
         }
       });
 
       if (response.ok) {
 
-        successMessage.classList.remove("hidden");
+        // Hide Form
+        form.style.display = "none";
 
+        // Show Thank You Box
+        thankYouBox.classList.remove("hidden");
+
+        // Reset Form
         form.reset();
-
-        submitBtn.innerHTML = "Message Sent ✅";
-
-        setTimeout(() => {
-
-          submitBtn.innerHTML = "Send Message";
-          submitBtn.disabled = false;
-
-        }, 3000);
 
       } else {
 
