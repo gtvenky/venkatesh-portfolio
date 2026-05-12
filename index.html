@@ -1,0 +1,593 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Venkatesh G T | Portfolio</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Animate CSS -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0f172a;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, #38bdf8, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card {
+      transition: 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-12px) scale(1.02);
+    }
+
+    /* FLOATING IMAGE */
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-18px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .floating {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* GLOW EFFECT */
+    @keyframes glow {
+
+      0% {
+        box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 35px rgba(56, 189, 248, 0.8);
+      }
+
+      100% {
+        box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+      }
+    }
+
+    .animated-glow {
+      animation: glow 3s infinite;
+    }
+
+    /* BACKGROUND PARTICLES */
+    .bg-animation {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .bg-animation span {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: rgba(56, 189, 248, 0.08);
+      bottom: -150px;
+      border-radius: 50%;
+      animation: move 25s linear infinite;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="bg-animation">
+    <span style="left:10%; animation-delay:0s;"></span>
+    <span style="left:20%; animation-delay:2s;"></span>
+    <span style="left:35%; animation-delay:4s;"></span>
+    <span style="left:50%; animation-delay:1s;"></span>
+    <span style="left:65%; animation-delay:6s;"></span>
+    <span style="left:80%; animation-delay:3s;"></span>
+    <span style="left:90%; animation-delay:5s;"></span>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav
+    class="fixed top-0 left-0 w-full bg-slate-900/80 backdrop-blur-lg border-b border-white/10 z-50">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+      <h1 class="text-2xl font-bold gradient-text animate-pulse">
+        Venkatesh G.T
+      </h1>
+
+      <ul class="hidden md:flex gap-8 text-sm font-semibold">
+        <li><a href="#home" class="hover:text-cyan-400">Home</a></li>
+        <li><a href="#about" class="hover:text-cyan-400">About</a></li>
+        <li><a href="#skills" class="hover:text-cyan-400">Skills</a></li>
+        <li><a href="#projects" class="hover:text-cyan-400">Projects</a></li>
+        <li><a href="#contact" class="hover:text-cyan-400">Contact</a></li>
+      </ul>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="min-h-screen flex items-center pt-24 px-6">
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+
+      <!-- LEFT -->
+      <div class="animate__animated animate__fadeInLeft">
+
+        <p class="text-cyan-400 text-lg mb-3 animate-pulse">
+          Hello, I'm
+        </p>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-5">
+          Venkatesh <span class="gradient-text">G T</span>
+        </h1>
+
+        <h2 class="text-2xl md:text-3xl text-slate-300 font-semibold mb-6">
+          WordPress & Frontend Developer
+        </h2>
+
+        <p class="text-slate-400 leading-8 text-lg mb-8">
+          Passionate Frontend Developer with experience in
+          WordPress, WooCommerce, Tailwind CSS,
+          SEO Optimization, REST APIs,
+          and responsive website development.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+
+          <a href="#projects"
+            class="px-8 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-600 transition font-semibold animated-glow">
+            View Projects
+          </a>
+
+          <a href="#contact"
+            class="px-8 py-3 rounded-xl border border-cyan-400 hover:bg-cyan-400 hover:text-black transition font-semibold">
+            Hire Me
+          </a>
+
+          <!-- DOWNLOAD RESUME -->
+          <a href="./venkatesh gt.pdf"
+            download
+            class="px-8 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 transition font-semibold">
+            Download Resume
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="flex justify-center animate__animated animate__fadeInRight">
+
+        <div
+          class="w-[320px] h-[320px] rounded-full overflow-hidden border-4 border-cyan-400 floating animated-glow">
+
+          <!-- YOUR IMAGE -->
+          <img src="./img.jpeg"
+            alt="Profile"
+            class="w-full h-full object-cover">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 px-6 bg-slate-950">
+
+    <div class="max-w-6xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center mb-16 gradient-text">
+        About Me
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div
+          class="bg-slate-900 p-8 rounded-3xl border border-white/10 card hover:shadow-cyan-500/20 hover:shadow-2xl">
+
+          <h3 class="text-2xl font-bold mb-4 text-cyan-400">
+            Professional Summary
+          </h3>
+
+          <p class="text-slate-300 leading-8">
+            Highly motivated WordPress Developer and Frontend Developer
+            with 2+ years of experience building responsive,
+            scalable, and high-performance web applications.
+          </p>
+
+        </div>
+
+        <div
+          class="bg-slate-900 p-8 rounded-3xl border border-white/10 card hover:shadow-cyan-500/20 hover:shadow-2xl">
+
+          <h3 class="text-2xl font-bold mb-4 text-cyan-400">
+            Experience
+          </h3>
+
+          <p class="text-slate-300 leading-8">
+            Front-End Developer at Team Pumpkin, Bangalore.
+            Experienced in WooCommerce,
+            SEO optimization, REST API integration,
+            and responsive UI development.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-24 px-6">
+
+    <div class="max-w-6xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center mb-16 gradient-text">
+        Technical Skills
+      </h2>
+
+
+<!-- skills -->
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+  <!-- HTML -->
+  <div
+    class="bg-slate-900 p-6 rounded-2xl border border-white/10 text-center card hover:shadow-cyan-500/30 hover:shadow-2xl">
+    <h3 class="text-xl font-bold mb-2">HTML5</h3>
+    <p class="text-slate-400">Responsive layouts</p>
+  </div>
+
+  <!-- CSS -->
+  <div
+    class="bg-slate-900 p-6 rounded-2xl border border-white/10 text-center card hover:shadow-cyan-500/30 hover:shadow-2xl">
+    <h3 class="text-xl font-bold mb-2">CSS3</h3>
+    <p class="text-slate-400">Modern UI styling</p>
+  </div>
+
+  <!-- TAILWIND -->
+  <div
+    class="bg-slate-900 p-6 rounded-2xl border border-white/10 text-center card hover:shadow-cyan-500/30 hover:shadow-2xl">
+    <h3 class="text-xl font-bold mb-2">Tailwind CSS</h3>
+    <p class="text-slate-400">Utility-first framework</p>
+  </div>
+
+  <!-- BOOTSTRAP -->
+  <div
+    class="bg-slate-900 p-6 rounded-2xl border border-white/10 text-center card hover:shadow-cyan-500/30 hover:shadow-2xl">
+    <h3 class="text-xl font-bold mb-2">Bootstrap</h3>
+    <p class="text-slate-400">Responsive UI framework</p>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <div
+    class="bg-slate-900 p-6 rounded-2xl border border-white/10 text-center card hover:shadow-cyan-500/30 hover:shadow-2xl">
+    <h3 class="text-xl font-bold mb-2">JavaScript</h3>
+    <p class="text-slate-400">Interactive UI</p>
+  </div>
+
+  <!-- WORDPRESS -->
+  <div
+    class="bg-slate-900 p-6 rounded-2xl border border-white/10 text-center card hover:shadow-cyan-500/30 hover:shadow-2xl">
+    <h3 class="text-xl font-bold mb-2">WordPress</h3>
+    <p class="text-slate-400">Theme customization</p>
+  </div>
+
+  <!-- WOOCOMMERCE -->
+  <div
+    class="bg-slate-900 p-6 rounded-2xl border border-white/10 text-center card hover:shadow-cyan-500/30 hover:shadow-2xl">
+    <h3 class="text-xl font-bold mb-2">WooCommerce</h3>
+    <p class="text-slate-400">E-commerce websites</p>
+  </div>
+
+  <!-- AEM -->
+  <div
+    class="bg-slate-900 p-6 rounded-2xl border border-white/10 text-center card hover:shadow-cyan-500/30 hover:shadow-2xl">
+    <h3 class="text-xl font-bold mb-2">AEM</h3>
+    <p class="text-slate-400">Adobe Experience Manager</p>
+  </div>
+
+  <!-- MYSQL -->
+  <div
+    class="bg-slate-900 p-6 rounded-2xl border border-white/10 text-center card hover:shadow-cyan-500/30 hover:shadow-2xl">
+    <h3 class="text-xl font-bold mb-2">MySQL</h3>
+    <p class="text-slate-400">Database management</p>
+  </div>
+
+  <!-- SEO -->
+  <div
+    class="bg-slate-900 p-6 rounded-2xl border border-white/10 text-center card hover:shadow-cyan-500/30 hover:shadow-2xl">
+    <h3 class="text-xl font-bold mb-2">SEO</h3>
+    <p class="text-slate-400">Core Web Vitals</p>
+  </div>
+
+  <!-- GIT -->
+  <div
+    class="bg-slate-900 p-6 rounded-2xl border border-white/10 text-center card hover:shadow-cyan-500/30 hover:shadow-2xl">
+    <h3 class="text-xl font-bold mb-2">Git</h3>
+    <p class="text-slate-400">Version control</p>
+  </div>
+
+  <!-- REST API -->
+  <div
+    class="bg-slate-900 p-6 rounded-2xl border border-white/10 text-center card hover:shadow-cyan-500/30 hover:shadow-2xl">
+    <h3 class="text-xl font-bold mb-2">REST API</h3>
+    <p class="text-slate-400">API integration</p>
+  </div>
+
+</div>
+
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-24 px-6 bg-slate-950">
+
+    <div class="max-w-6xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center mb-16 gradient-text">
+        Projects
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- CARD -->
+        <div
+          class="bg-slate-900 rounded-3xl overflow-hidden border border-white/10 card hover:scale-105 hover:shadow-cyan-500/30 hover:shadow-2xl">
+
+          <img
+            src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop"
+            class="w-full h-52 object-cover">
+
+          <div class="p-6">
+
+            <h3 class="text-2xl font-bold mb-3">
+              WooCommerce Store
+            </h3>
+
+            <p class="text-slate-400 leading-7 mb-5">
+              Built optimized e-commerce websites with payment integration.
+            </p>
+
+           <a href="https://sgmart.co.in/" target="_blank" class="inline-block px-5 py-2 bg-cyan-500 rounded-lg hover:bg-cyan-600 transition" > Live Demo </a>
+
+          </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="bg-slate-900 rounded-3xl overflow-hidden border border-white/10 card hover:scale-105 hover:shadow-cyan-500/30 hover:shadow-2xl">
+
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
+            class="w-full h-52 object-cover">
+
+          <div class="p-6">
+
+            <h3 class="text-2xl font-bold mb-3">
+              SEO Optimization
+            </h3>
+
+            <p class="text-slate-400 leading-7 mb-5">
+              Improved Lighthouse scores and SEO ranking.
+            </p>
+
+<a href="https://stormfieldcapital.com/" target="_blank" class="inline-block px-5 py-2 bg-cyan-500 rounded-lg hover:bg-cyan-600 transition" > View Project</a>
+
+          </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="bg-slate-900 rounded-3xl overflow-hidden border border-white/10 card hover:scale-105 hover:shadow-cyan-500/30 hover:shadow-2xl">
+
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
+            class="w-full h-52 object-cover">
+
+          <div class="p-6">
+
+            <h3 class="text-2xl font-bold mb-3">
+              Responsive UI
+            </h3>
+
+            <p class="text-slate-400 leading-7 mb-5">
+              Developed reusable responsive layouts using Tailwind CSS.
+            </p>
+
+            <a href="https://ivflondon.co.uk" target="_blank" class="inline-block px-5 py-2 bg-cyan-500 rounded-lg hover:bg-cyan-600 transition" > Explore</a>
+
+          </div>
+
+        </div>
+
+        <!-- ========================= -->
+<!-- 📁 AEM PROJECT CARD -->
+<!-- ========================= -->
+
+<div
+  class="bg-slate-900 rounded-3xl overflow-hidden border border-white/10 card hover:scale-105 hover:shadow-cyan-500/30 hover:shadow-2xl transition duration-300">
+
+  <img
+    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+    class="w-full h-52 object-cover">
+
+  <div class="p-6">
+
+    <h3 class="text-2xl font-bold mb-3 text-white">
+      AEM Projects
+    </h3>
+
+    <p class="text-slate-400 leading-7 mb-5">
+      Explore my Adobe Experience Manager projects including responsive components, templates, and dynamic integrations.
+    </p>
+
+    <!-- 🔗 OPEN NEW PAGE -->
+    <a href="aem-projects.html"
+      class="inline-block px-5 py-2 bg-cyan-500 rounded-lg hover:bg-cyan-600 transition text-white font-semibold">
+      View Projects
+    </a>
+
+  </div>
+
+</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 px-6">
+
+    <div class="max-w-4xl mx-auto">
+
+      <h2 class="text-4xl font-bold text-center mb-14 gradient-text">
+        Contact Me
+      </h2>
+
+      <!-- FORM -->
+      <form
+        action="https://formsubmit.co/gtvenkatesh205@gmail.com"
+        method="POST"
+        class="bg-slate-900 p-10 rounded-3xl border border-white/10">
+
+        <!-- SETTINGS -->
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            class="bg-slate-800 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400">
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            class="bg-slate-800 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400">
+
+        </div>
+
+        <textarea
+          name="message"
+          rows="6"
+          placeholder="Your Message"
+          required
+          class="w-full bg-slate-800 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400 mb-6"></textarea>
+
+        <button
+          type="submit"
+          class="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 rounded-xl font-bold animated-glow transition">
+          Send Message
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center border-t border-white/10 bg-slate-950">
+
+    <p class="text-slate-500">
+      © 2026 Venkatesh G T • Frontend & WordPress Developer
+    </p>
+
+  </footer>
+
+  <!-- SCROLL ANIMATION -->
+  <script>
+
+    const cards = document.querySelectorAll('.card');
+
+    window.addEventListener('scroll', () => {
+
+      cards.forEach(card => {
+
+        const cardTop = card.getBoundingClientRect().top;
+
+        if (cardTop < window.innerHeight - 100) {
+
+          card.classList.add(
+            'animate__animated',
+            'animate__zoomIn'
+          );
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+
+</html>
+
+
+
