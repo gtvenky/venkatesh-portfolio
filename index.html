@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -505,47 +504,53 @@
       </h2>
 
       <!-- FORM -->
-      <form
-        action="https://formsubmit.co/gtvenkatesh205@gmail.com"
-        method="POST"
-        class="bg-slate-900 p-10 rounded-3xl border border-white/10">
+    <form
+  action="https://formsubmit.co/gtvenkatesh205@gmail.com"
+  method="POST"
+  class="bg-slate-900 p-10 rounded-3xl border border-white/10">
 
-        <!-- SETTINGS -->
-        <input type="hidden" name="_captcha" value="false">
+  <!-- Disable Captcha -->
+  <input type="hidden" name="_captcha" value="false">
 
-        <div class="grid md:grid-cols-2 gap-6 mb-6">
+  <!-- Email Subject -->
+  <input type="hidden" name="_subject" value="New Portfolio Contact!">
 
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            required
-            class="bg-slate-800 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400">
+  <!-- Redirect After Submit -->
+  <input type="hidden" name="_next"
+    value="https://gtvenky.github.io/venkatesh-portfolio/">
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            required
-            class="bg-slate-800 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400">
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
 
-        </div>
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      required
+      class="bg-slate-800 border border-white/10 rounded-xl px-5 py-4 outline-none">
 
-        <textarea
-          name="message"
-          rows="6"
-          placeholder="Your Message"
-          required
-          class="w-full bg-slate-800 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-cyan-400 mb-6"></textarea>
+    <input
+      type="email"
+      name="email"
+      placeholder="Your Email"
+      required
+      class="bg-slate-800 border border-white/10 rounded-xl px-5 py-4 outline-none">
 
-        <button
-          type="submit"
-          class="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 rounded-xl font-bold animated-glow transition">
-          Send Message
-        </button>
+  </div>
 
-      </form>
+  <textarea
+    name="message"
+    rows="6"
+    placeholder="Your Message"
+    required
+    class="w-full bg-slate-800 border border-white/10 rounded-xl px-5 py-4 mb-6"></textarea>
 
+  <button
+    type="submit"
+    class="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 rounded-xl font-bold">
+    Send Message
+  </button>
+
+</form>
     </div>
 
   </section>
